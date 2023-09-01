@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "String Concatenator",
+  "name": "API QuickView",
   "version": "1.0",
-  "description": "Concatenate string with chosen URL and fetch JSON",
+  "description": "Concatenate string with API endpoint and quickly review a JSON",
   "permissions": ["activeTab"],
   "background": {
     "service_worker": "background.js"
