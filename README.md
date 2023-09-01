@@ -5,7 +5,7 @@ Simple Google Chrome extension written with manifest v3, HTML, CSS and vanilla J
 ## Installation
 
 - Clone the repository with `git clone`
-- Open [Chrome extensions page](chrome://extensions)
+- Open Chrome extensions page - chrome://extensions
 - Enable Developer mode
 - Click "Load Unpacked"
 - Select the folder that contains the extension:
