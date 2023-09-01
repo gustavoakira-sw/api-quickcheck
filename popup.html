@@ -6,13 +6,14 @@
 </head>
 <body>
   <h3>API QuickView</h3>
-  <textarea id="inputText" placeholder="Enter text" rows="1"></textarea>
   <select id="urlSelect">
+    <option value="">Select an option</option>
     <option value="https://catfact.ninja/">CatFact(fact)</option>
     <option value="https://jsonplaceholder.typicode.com/comments/">JSONPlaceholder(int)</option>
     <option value="https://api.agify.io?name=">Agify(name)</option>
   </select>
-  <button id="fetchButton">Fetch JSON</button>
+  <textarea id="inputText" placeholder="Enter text" rows="1"></textarea>
+  <button id="fetchButton" disabled>Fetch JSON</button>
   <p id="urlDisplay"></p>
   <div id="output"></div>
   <script src="popup.js"></script>

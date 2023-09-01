@@ -3,13 +3,37 @@ document.addEventListener('DOMContentLoaded', function() {
   const urlSelect = document.getElementById('urlSelect');
   const fetchButton = document.getElementById('fetchButton');
   const output = document.getElementById('output');
+  const urlDisplay = document.getElementById('urlDisplay');
 
-  fetchButton.addEventListener('click', async () => {
+  urlSelect.addEventListener('change', updateButtonState);
+  inputText.addEventListener('input', updateButtonState);
+
+  // Add event listener for Enter key press in the inputText
+  inputText.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      if (!fetchButton.disabled) {
+        fetchJson();
+      }
+    }
+  });
+
+  // Add event listener for Fetch button click
+  fetchButton.addEventListener('click', fetchJson);
+
+  // Function to update button state based on selected option and input text
+  function updateButtonState() {
+    const selectedOption = urlSelect.value;
+    const inputValue = inputText.value;
+    const isInputBlank = inputValue.trim() === '';
+
+    fetchButton.disabled = selectedOption === '' || isInputBlank;
+  }
+
+  async function fetchJson() {
     const selectedUrl = urlSelect.value;
     const inputValue = inputText.value;
     const urlWithInput = selectedUrl + encodeURIComponent(inputValue);
-
-    urlDisplay.textContent = `${urlWithInput}`;
 
     try {
       const response = await fetch(urlWithInput, { redirect: 'follow' });
@@ -25,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const jsonData = await response.json();
 
-      // Limit the displayed JSON to a certain number of characters
-      const maxDisplayLength = 1000; // You can adjust this value
+      // Process output JSON
+      const maxDisplayLength = 1000; // Adjust at will
       const truncatedJson = JSON.stringify(jsonData, null, 2).slice(0, maxDisplayLength);
       
       // Display the truncated JSON within a scrollable area
@@ -35,5 +59,5 @@ document.addEventListener('DOMContentLoaded', function() {
       output.innerHTML = 'Error fetching or parsing JSON';
       console.error(error);
     }
-  });
+  }
 });
