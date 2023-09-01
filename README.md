@@ -22,3 +22,4 @@ Simple Google Chrome extension written with manifest v3, HTML, CSS and vanilla J
 └── styles.css
 ```
 - Pin it for ease of use
+![image](https://github.com/gustavoakira-sw/api-quickcheck/assets/125785377/cc337b13-1248-4529-9aef-a7315733ea94)
