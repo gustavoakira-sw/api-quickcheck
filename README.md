@@ -23,4 +23,4 @@ Simple Google Chrome extension written with manifest v3, HTML, CSS and vanilla J
 ├── popup.js
 └── styles.css
 ```
-- Pin it for ease of use
+- Pin it for ease of use in the future
