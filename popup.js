@@ -1,4 +1,3 @@
-// popup.js
 document.addEventListener('DOMContentLoaded', function() {
   const inputText = document.getElementById('inputText');
   const urlSelect = document.getElementById('urlSelect');
@@ -9,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedUrl = urlSelect.value;
     const inputValue = inputText.value;
     const urlWithInput = selectedUrl + encodeURIComponent(inputValue);
+
+    urlDisplay.textContent = `${urlWithInput}`;
 
     try {
       const response = await fetch(urlWithInput, { redirect: 'follow' });
