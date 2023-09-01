@@ -1,8 +1,8 @@
 # API QuickView
 
-Simple Google Chrome extension written with manifest v3, HTML, CSS and vanilla JS to make API GET requests concatenating a string with a pre-defined endpoint URL.
+Simple Google Chrome extension written with manifest v3, HTML, CSS and vanilla JS to make API GET requests concatenating a string with a pre-defined endpoint URL. Setting custom headers and data will be included in the future.
 
-![image](https://github.com/gustavoakira-sw/api-quickcheck/assets/125785377/cc337b13-1248-4529-9aef-a7315733ea94)
+![image](https://github.com/gustavoakira-sw/api-quickview/assets/125785377/6dec0b5f-eeff-4a40-9d04-70c20db07e4f)
 
 ## Installation
 

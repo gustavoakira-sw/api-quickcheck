@@ -12,6 +12,10 @@ h3 {
     margin-bottom: 10px;
 }
 
+a {
+    cursor: pointer;
+}
+
 textarea,
 select,
 button {

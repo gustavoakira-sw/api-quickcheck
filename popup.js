@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const fetchButton = document.getElementById('fetchButton');
   const output = document.getElementById('output');
   const urlDisplay = document.getElementById('urlDisplay');
+  const urlLink = document.createElement('a');
 
   urlSelect.addEventListener('change', updateButtonState);
   inputText.addEventListener('input', updateButtonState);
@@ -34,6 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedUrl = urlSelect.value;
     const inputValue = inputText.value;
     const urlWithInput = selectedUrl + encodeURIComponent(inputValue);
+
+    urlLink.textContent = urlWithInput;
+    urlLink.href = urlWithInput;
+    urlLink.target = '_blank';
+
+    urlDisplay.appendChild(urlLink);
 
     try {
       const response = await fetch(urlWithInput, { redirect: 'follow' });
